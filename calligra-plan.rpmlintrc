@@ -1,0 +1,6 @@
+# False positives because calligra-plan comes with a couple of
+# "libraries" that just aren't usable outside of it
+addFilter("E: non-versioned-file-in-library-package")
+addFilter("E: executable-in-library-package")
+addFilter("E: incoherent-version-in-name")
+addFilter("E: devel-file-in-non-devel-package")
