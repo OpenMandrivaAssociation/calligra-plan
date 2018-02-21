@@ -133,4 +133,4 @@ for i in $list ; do
 done;
 %endif
 
-%find_lang %{name} --all-name --with-html
+#%%find_lang %{name} --all-name --with-html
