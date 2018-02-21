@@ -54,6 +54,7 @@ BuildRequires:	cmake(KF5ThreadWeaver)
 BuildRequires:	cmake(KF5WidgetsAddons)
 BuildRequires:	cmake(KF5WindowSystem)
 BuildRequires:	cmake(KF5XmlGui)
+BuildRequires:	cmake(KCMUtils)
 %if %compile_apidox
 BuildRequires:	doxygen
 BuildRequires:	graphviz
