@@ -113,11 +113,8 @@ It is intended for managing moderately large projects with multiple resources.
 %apply_patches
 
 %build
-if ! %cmake_kde5 \
-	-DPACKAGERS_BUILD=ON; then
-	cat CMakeFiles/CMake*.log
-	exit 1
-fi
+%cmake_kde5 \
+	-DPACKAGERS_BUILD=ON
 %ninja
 
 %if %{compile_apidox}
