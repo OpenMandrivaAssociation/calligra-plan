@@ -56,7 +56,7 @@ BuildRequires:	cmake(KF5WindowSystem)
 BuildRequires:	cmake(KF5XmlGui)
 BuildRequires:	cmake(KF5KCMUtils)
 BuildRequires:	cmake(KF5Activities)                                                                                                                   
-BuildRequires:	cmake(KGantt-devel)
+BuildRequires:	cmake(KGantt)
 %if %compile_apidox
 BuildRequires:	doxygen
 BuildRequires:	graphviz
