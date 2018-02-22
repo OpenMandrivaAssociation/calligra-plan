@@ -30,6 +30,7 @@ BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF5AkonadiContact)
 BuildRequires:	cmake(KF5Akonadi)
 BuildRequires:	cmake(KF5Archive)
+BuildRequires:	cmake(KF5Activities)
 BuildRequires:	cmake(KF5CalendarCore)
 BuildRequires:	cmake(KF5Completion)
 BuildRequires:	cmake(KF5ConfigWidgets)
@@ -112,8 +113,11 @@ It is intended for managing moderately large projects with multiple resources.
 %apply_patches
 
 %build
-%cmake_kde5 \
-	-DPACKAGERS_BUILD=ON
+if ! %cmake_kde5 \
+	-DPACKAGERS_BUILD=ON; then
+	cat CMakeFiles/CMake*.log
+	exit 1
+fi
 %ninja
 
 %if %{compile_apidox}
