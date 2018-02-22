@@ -59,6 +59,7 @@ BuildRequires:	cmake(KF5KCMUtils)
 BuildRequires:	cmake(KF5Activities)                                                                                                                   
 BuildRequires:	cmake(KGantt)
 BuildRequires:	cmake(Qt5Test)
+BuildRequires:	cmake(Qt5OpenGL)
 %if %compile_apidox
 BuildRequires:	doxygen
 BuildRequires:	graphviz
