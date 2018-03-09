@@ -12,7 +12,7 @@ Name:		calligra-plan
 #koffice has epoch 15. We need a higher epoch
 Epoch:		16
 Version:	3.1.0
-Release:	1
+Release:	2
 Group:		Office
 License:	GPLv2+ and LGPLv2+ and GFDL
 Url:		https://www.calligra.org/plan/
@@ -138,5 +138,11 @@ for i in $list ; do
 	cd ../;
 done;
 %endif
+
+## unpackaged files
+# bogus locale
+rm -frv %{buildroot}%{_kde5_datadir}/locale/x-test/
+# no need to package lib*.so symlinks
+find  %{buildroot}%{_kde5_libdir}/  -maxdepth 1 -name lib*.so -type l -delete 
 
 %find_lang %{name} --all-name --with-html
