@@ -18,7 +18,7 @@ License:	GPLv2+ and LGPLv2+ and GFDL
 Url:		https://www.calligra.org/plan/
 Source0:	http://download.kde.org/%{stable}/calligra/%{version}/calligraplan-%{version}.tar.xz
 Source100:	%{name}.rpmlintrc
-
+BuildRequires:  pkgconfig(zlib)
 BuildRequires:	pkgconfig(Qt5Core)
 BuildRequires:	pkgconfig(Qt5DBus)
 BuildRequires:	pkgconfig(Qt5Gui)
