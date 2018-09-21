@@ -18,7 +18,9 @@ License:	GPLv2+ and LGPLv2+ and GFDL
 Url:		https://www.calligra.org/plan/
 Source0:	http://download.kde.org/%{stable}/calligra/%{version}/calligraplan-%{version}.tar.xz
 Source100:	%{name}.rpmlintrc
-BuildRequires:  pkgconfig(zlib)
+## upstream patches
+Patch0:		0020-Fix-build-with-Qt-5.11-missing-headers.patch
+BuildRequires:	pkgconfig(zlib)
 BuildRequires:	pkgconfig(Qt5Core)
 BuildRequires:	pkgconfig(Qt5DBus)
 BuildRequires:	pkgconfig(Qt5Gui)
@@ -111,12 +113,12 @@ It is intended for managing moderately large projects with multiple resources.
 /usr/share/metainfo/org.kde.calligraplan.appdata.xml
 
 %prep
-%setup -qn calligraplan-%{version}
-%apply_patches
+%autosetup -n calligraplan-%{version} -p1
 
 %build
 %cmake_kde5 \
 	-DPACKAGERS_BUILD=ON
+
 %ninja
 
 %if %{compile_apidox}
@@ -131,12 +133,12 @@ ninja install-apidox DESTDIR=%{buildroot}/
 list=`ls -d */ -1`;
 echo $list;
 for i in $list ; do
-	cd $i;
-		if grep '^include .*Doxyfile.am' Makefile.am; then
-			echo "installing apidox from $i" ;	
-			make install-apidox DESTDIR=%{buildroot}/ ; 
-		fi
-	cd ../;
+    cd $i;
+	if grep '^include .*Doxyfile.am' Makefile.am; then
+	    echo "installing apidox from $i" ;	
+	    make install-apidox DESTDIR=%{buildroot}/ ; 
+	fi
+    cd ../;
 done;
 %endif
 
@@ -144,6 +146,6 @@ done;
 # bogus locale
 rm -frv %{buildroot}%{_kde5_datadir}/locale/x-test/
 # no need to package lib*.so symlinks
-find  %{buildroot}%{_kde5_libdir}/  -maxdepth 1 -name lib*.so -type l -delete 
+find  %{buildroot}%{_kde5_libdir}/  -maxdepth 1 -name lib*.so -type l -delete
 
 %find_lang %{name} --all-name --with-html
