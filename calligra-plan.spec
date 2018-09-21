@@ -113,7 +113,7 @@ It is intended for managing moderately large projects with multiple resources.
 /usr/share/metainfo/org.kde.calligraplan.appdata.xml
 
 %prep
-%autosetup -n calligraplan-%{version} -p1
+%autosetup -n calligraplan-%{version} -p2
 
 %build
 %cmake_kde5 \
