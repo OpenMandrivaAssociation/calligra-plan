@@ -3,7 +3,7 @@
 %define _disable_ld_no_undefined 1
 %define _disable_lto 1
 
-%define major 16
+%define major 17
 
 %define stable %([ `echo %{version} |cut -d. -f3` -ge 70 ] && echo -n un; echo -n stable)
 
@@ -11,8 +11,8 @@ Summary:	Project management application
 Name:		calligra-plan
 #koffice has epoch 15. We need a higher epoch
 Epoch:		16
-Version:	3.1.0
-Release:	3
+Version:	3.2.2
+Release:	1
 Group:		Office
 License:	GPLv2+ and LGPLv2+ and GFDL
 Url:		https://www.calligra.org/plan/
