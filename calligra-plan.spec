@@ -19,7 +19,7 @@ Url:		https://www.calligra.org/plan/
 Source0:	http://download.kde.org/%{stable}/calligra/%{version}/calligraplan-%{version}.tar.xz
 Source100:	%{name}.rpmlintrc
 ## upstream patches
-Patch0:		0020-Fix-build-with-Qt-5.11-missing-headers.patch
+
 BuildRequires:	pkgconfig(zlib)
 BuildRequires:	pkgconfig(Qt5Core)
 BuildRequires:	pkgconfig(Qt5DBus)
