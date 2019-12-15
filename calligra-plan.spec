@@ -3,7 +3,7 @@
 %define _disable_ld_no_undefined 1
 %define _disable_lto 1
 
-%define major 16
+%define major 17
 
 %define stable %([ `echo %{version} |cut -d. -f3` -ge 70 ] && echo -n un; echo -n stable)
 
@@ -11,15 +11,15 @@ Summary:	Project management application
 Name:		calligra-plan
 #koffice has epoch 15. We need a higher epoch
 Epoch:		16
-Version:	3.1.0
-Release:	3
+Version:	3.2.2
+Release:	1
 Group:		Office
 License:	GPLv2+ and LGPLv2+ and GFDL
 Url:		https://www.calligra.org/plan/
 Source0:	http://download.kde.org/%{stable}/calligra/%{version}/calligraplan-%{version}.tar.xz
 Source100:	%{name}.rpmlintrc
 ## upstream patches
-Patch0:		0020-Fix-build-with-Qt-5.11-missing-headers.patch
+
 BuildRequires:	pkgconfig(zlib)
 BuildRequires:	pkgconfig(Qt5Core)
 BuildRequires:	pkgconfig(Qt5DBus)
@@ -80,9 +80,12 @@ It is intended for managing moderately large projects with multiple resources.
 %{_bindir}/calligraplanwork
 %{_libdir}/libkdeinit5_calligraplan.so
 %{_libdir}/libkdeinit5_calligraplanwork.so
-%{_libdir}/libkplatokernel.so*
-%{_libdir}/libkplatomodels.so*
-%{_libdir}/libkplatoui.so*
+#{_libdir}/libkplatokernel.so*
+%{_libdir}/libplankernel.so*
+%{_libdir}/libplanmodels.so*
+%{_libdir}/libplanui.so*
+#{_libdir}/libkplatomodels.so*
+#{_libdir}/libkplatoui.so*
 %{_libdir}/libplankundo2.so*
 %{_libdir}/libplanmain.so*
 %{_libdir}/libplanodf.so*
