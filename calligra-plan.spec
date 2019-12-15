@@ -82,7 +82,7 @@ It is intended for managing moderately large projects with multiple resources.
 %{_libdir}/libkdeinit5_calligraplanwork.so
 #{_libdir}/libkplatokernel.so*
 %{_libdir}/libplankernel.so*
-%{_libdir}/libplanmodels.sp*
+%{_libdir}/libplanmodels.so*
 %{_libdir}/libplanui.so*
 #{_libdir}/libkplatomodels.so*
 #{_libdir}/libkplatoui.so*
