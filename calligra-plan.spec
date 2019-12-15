@@ -80,9 +80,9 @@ It is intended for managing moderately large projects with multiple resources.
 %{_bindir}/calligraplanwork
 %{_libdir}/libkdeinit5_calligraplan.so
 %{_libdir}/libkdeinit5_calligraplanwork.so
-%{_libdir}/libkplatokernel.so*
-%{_libdir}/libkplatomodels.so*
-%{_libdir}/libkplatoui.so*
+#{_libdir}/libkplatokernel.so*
+#{_libdir}/libkplatomodels.so*
+#{_libdir}/libkplatoui.so*
 %{_libdir}/libplankundo2.so*
 %{_libdir}/libplanmain.so*
 %{_libdir}/libplanodf.so*
