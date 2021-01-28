@@ -11,7 +11,7 @@ Summary:	Project management application
 Name:		calligra-plan
 #koffice has epoch 15. We need a higher epoch
 Epoch:		16
-Version:	3.2.2
+Version:	3.3.0
 Release:	1
 Group:		Office
 License:	GPLv2+ and LGPLv2+ and GFDL
@@ -60,7 +60,9 @@ BuildRequires:	cmake(KF5XmlGui)
 BuildRequires:	cmake(KF5KCMUtils)
 BuildRequires:	cmake(KF5Activities)
 BuildRequires:	cmake(KF5Wallet)
+BuildRequires:	cmake(KF5Holidays)
 BuildRequires:	cmake(KGantt)
+BuildRequires:	cmake(KChart)
 BuildRequires:	cmake(Qt5Test)
 BuildRequires:	cmake(Qt5OpenGL)
 %if %compile_apidox
