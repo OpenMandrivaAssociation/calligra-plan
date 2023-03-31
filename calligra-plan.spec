@@ -12,7 +12,7 @@ Name:		calligra-plan
 #koffice has epoch 15. We need a higher epoch
 Epoch:		16
 Version:	3.3.0
-Release:	1
+Release:	2
 Group:		Office
 License:	GPLv2+ and LGPLv2+ and GFDL
 Url:		https://www.calligra.org/plan/
